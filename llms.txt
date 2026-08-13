@@ -1,0 +1,13 @@
+# 微信小游戏上线前工程快检
+
+Independent pre-submission engineering review for one WeChat Mini Game project and one explicit version.
+
+- Introductory price: CNY 99 for the first three projects.
+- Delivery: within 24 hours after complete sanitized materials are received.
+- Deliverable: Markdown or PDF risk report with summary, P0/P1/P2 findings, evidence locations, remediation advice, and one written Q&A round.
+- Preferred projects: native JavaScript / Canvas. Cocos, Unity, and server-heavy scopes require confirmation first.
+- Not included: code remediation, physical-device testing, filing, qualification applications, account operations, or formal submission.
+- No guarantee of WeChat approval, publication time, traffic, or revenue.
+- Never send passwords, AppSecret, API keys, tokens, cookies, verification codes, identity documents, or real user data.
+- Fictional sample: https://github.com/yiten885-ux/wechat-minigame-preflight-service/blob/main/sample-report.md
+- Scope inquiry: https://github.com/yiten885-ux/wechat-minigame-preflight-service/issues/new?template=service-inquiry.yml

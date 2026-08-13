@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yiten885-ux.github.io/wechat-minigame-preflight-service/sitemap.xml
