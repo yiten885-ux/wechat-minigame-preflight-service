@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="微信小游戏上线前工程快检：首三单 99 元，收到脱敏材料后 24 小时内交付风险报告。" />
+    <link rel="canonical" href="https://yiten885-ux.github.io/wechat-minigame-preflight-service/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="微信小游戏上线前工程快检｜首三单 99 元" />
+    <meta property="og:description" content="代码、配置与提审材料的固定范围快检；交付可执行问题清单，不承诺审核结果。" />
+    <meta property="og:url" content="https://yiten885-ux.github.io/wechat-minigame-preflight-service/" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231e3a5f'/%3E%3Cpath d='M17 20h30v7H17zm0 12h20v7H17zm0 12h30v7H17z' fill='white'/%3E%3C/svg%3E" />
+    <title>微信小游戏上线前工程快检｜首三单 99 元</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #f8fafc;
+        --surface: #ffffff;
+        --text: #0f172a;
+        --muted: #475569;
+        --primary: #1e3a5f;
+        --primary-hover: #162c49;
+        --accent: #8a5106;
+        --line: #cbd5e1;
+        --soft: #e9eef5;
+        --ok: #166534;
+        --danger: #991b1b;
+        --shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        min-width: 320px;
+        background: var(--bg);
+        color: var(--text);
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Noto Sans Mono CJK SC", monospace;
+        font-size: 16px;
+        line-height: 1.7;
+      }
+      a { color: inherit; }
+      a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+      .skip-link {
+        position: absolute;
+        left: 16px;
+        top: -80px;
+        z-index: 10;
+        padding: 12px 16px;
+        background: var(--surface);
+        border: 2px solid var(--primary);
+      }
+      .skip-link:focus { top: 16px; }
+      .shell { width: min(100% - 32px, 960px); margin: 0 auto; }
+      header { padding: 24px 0 0; }
+      .brand { color: var(--primary); font-weight: 700; text-decoration: none; }
+      main { padding: 64px 0 88px; }
+      .hero { max-width: 760px; }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        min-height: 32px;
+        margin: 0 0 20px;
+        padding: 4px 12px;
+        color: var(--primary);
+        background: var(--soft);
+        border-radius: 999px;
+        font-size: 14px;
+        font-weight: 700;
+      }
+      h1, h2 { line-height: 1.2; letter-spacing: -0.035em; }
+      h1 { margin: 0; font-size: clamp(36px, 7vw, 68px); max-width: 12ch; }
+      h2 { margin: 0 0 24px; font-size: clamp(28px, 4vw, 40px); }
+      .lede { max-width: 64ch; margin: 24px 0 0; color: var(--muted); font-size: clamp(17px, 2.4vw, 20px); }
+      .price-row { display: flex; flex-wrap: wrap; gap: 20px 32px; align-items: flex-end; margin: 32px 0; }
+      .price { font-size: clamp(48px, 8vw, 72px); font-weight: 700; line-height: 1; color: var(--primary); font-variant-numeric: tabular-nums; }
+      .price small { font-size: 16px; color: var(--muted); font-weight: 400; }
+      .delivery { color: var(--ok); font-weight: 700; }
+      .cta-row { display: flex; flex-wrap: wrap; gap: 12px; }
+      .button {
+        display: inline-flex;
+        min-height: 48px;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 20px;
+        border: 2px solid var(--primary);
+        border-radius: 10px;
+        font-weight: 700;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+        touch-action: manipulation;
+      }
+      .button.primary { background: var(--primary); color: #fff; }
+      .button.primary:hover { background: var(--primary-hover); border-color: var(--primary-hover); }
+      .button.secondary { color: var(--primary); background: transparent; }
+      .button.secondary:hover { background: var(--soft); }
+      .note { margin: 18px 0 0; color: var(--muted); font-size: 14px; }
+      section { margin-top: 88px; }
+      .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+      .card { padding: 24px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); }
+      .card h3 { margin: 0 0 8px; font-size: 18px; }
+      .card p { margin: 0; color: var(--muted); }
+      .steps { counter-reset: step; display: grid; gap: 16px; margin: 0; padding: 0; list-style: none; }
+      .steps li { counter-increment: step; position: relative; padding: 22px 20px 22px 72px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; }
+      .steps li::before { content: counter(step); position: absolute; left: 20px; top: 20px; display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--primary); color: #fff; font-weight: 700; }
+      .steps strong { display: block; margin-bottom: 4px; }
+      .steps span { color: var(--muted); }
+      .boundary { border-left: 6px solid var(--danger); }
+      .boundary ul { margin: 12px 0 0; padding-left: 20px; }
+      footer { border-top: 1px solid var(--line); padding: 28px 0 48px; color: var(--muted); font-size: 14px; }
+      footer a { color: var(--primary); }
+
+      @media (max-width: 680px) {
+        main { padding-top: 48px; }
+        .grid { grid-template-columns: 1fr; }
+        .cta-row { display: grid; }
+        .button { width: 100%; }
+        section { margin-top: 64px; }
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0b1220;
+          --surface: #111c2e;
+          --text: #f1f5f9;
+          --muted: #cbd5e1;
+          --primary: #93c5fd;
+          --primary-hover: #bfdbfe;
+          --accent: #fbbf24;
+          --line: #334155;
+          --soft: #18263b;
+          --ok: #86efac;
+          --danger: #fca5a5;
+          --shadow: none;
+        }
+        .button.primary { color: #0b1220; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        *, *::before, *::after { transition-duration: 0.01ms !important; }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
+    <header class="shell">
+      <a class="brand" href="#main">MINIGAME / PREFLIGHT</a>
+    </header>
+    <main id="main" class="shell">
+      <div class="hero">
+        <p class="eyebrow">首三单体验价 · 一个工程一次快检</p>
+        <h1>微信小游戏上线前工程快检</h1>
+        <p class="lede">在预览、上传或提审前，找出最可能阻断运行、审核和数据安全的工程风险。所有结论都指向代码或证据；缺少证据就明确写“未验证”。</p>
+        <div class="price-row">
+          <div class="price">¥99 <small>/ 工程</small></div>
+          <div class="delivery">收到脱敏材料后 24 小时内交付</div>
+        </div>
+        <div class="cta-row">
+          <a class="button primary" href="https://github.com/yiten885-ux/wechat-minigame-preflight-service/issues/new?template=service-inquiry.yml">提交服务咨询</a>
+          <a class="button secondary" href="https://github.com/yiten885-ux/wechat-minigame-preflight-service/blob/main/sample-report.md">查看虚构匿名示例</a>
+        </div>
+        <p class="note">咨询只做公开范围确认。不要在 Issue 中上传源码、日志、截图、密码、AppSecret、Cookie、验证码或商业机密。</p>
+      </div>
+
+      <section aria-labelledby="scope-title">
+        <h2 id="scope-title">检查什么</h2>
+        <div class="grid">
+          <article class="card"><h3>入口与包体</h3><p>工程入口、构建说明、资源路径、主包/分包和容器不兼容 API。</p></article>
+          <article class="card"><h3>隐私与存档</h3><p>隐私接口、用户数据、本地存档、迁移恢复与用户清除路径。</p></article>
+          <article class="card"><h3>激励视频</h3><p>成功、失败、取消、重复回调和奖励幂等风险。</p></article>
+          <article class="card"><h3>设备与证据</h3><p>安全区、窄屏、触控，以及预览、真机、上传和提审证据分层。</p></article>
+        </div>
+      </section>
+
+      <section aria-labelledby="flow-title">
+        <h2 id="flow-title">怎么交付</h2>
+        <ol class="steps">
+          <li><strong>先确认范围</strong><span>说明技术栈、当前阶段和最担心的问题，不公开提交源码。</span></li>
+          <li><strong>通过平台担保下单</strong><span>确认一个工程、一个版本和检查边界后再付款。</span></li>
+          <li><strong>接收风险报告</strong><span>得到结论摘要、P0/P1/P2 风险、证据定位、建议和一次文字答疑。</span></li>
+        </ol>
+      </section>
+
+      <section aria-labelledby="boundary-title">
+        <div class="card boundary">
+          <h2 id="boundary-title">边界写在前面</h2>
+          <ul>
+            <li>这是独立工程快检，不是微信官方审核，也不承诺包过审、上线时间、流量或收入。</li>
+            <li>99 元不包含代码修复、真机代测、备案、资质申请、后台代操作和正式提审。</li>
+            <li>不索取账号密码、AppSecret、API Key、访问令牌、Cookie、验证码、身份证明或真实用户数据。</li>
+            <li>示例是虚构演示，不是真实客户案例。</li>
+          </ul>
+        </div>
+      </section>
+
+      <section aria-labelledby="final-title">
+        <h2 id="final-title">先确认能不能接，再下单</h2>
+        <p class="lede">原生 JavaScript / Canvas 项目优先；Cocos、Unity 或复杂服务端项目先说明技术栈和范围。</p>
+        <p><a class="button primary" href="https://github.com/yiten885-ux/wechat-minigame-preflight-service/issues/new?template=service-inquiry.yml">开始咨询</a></p>
+      </section>
+    </main>
+    <footer>
+      <div class="shell">公开说明与源文件托管于 <a href="https://github.com/yiten885-ux/wechat-minigame-preflight-service">GitHub</a>。页面不使用跟踪器，也不收集表单数据。</div>
+    </footer>
+  </body>
+</html>

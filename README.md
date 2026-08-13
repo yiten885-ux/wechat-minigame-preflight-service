@@ -2,6 +2,8 @@
 
 一个工程一次快检，首三单 **人民币 99 元**，收到脱敏材料后 24 小时内交付 PDF 或 Markdown 风险报告，并含一次文字答疑。
 
+**服务说明页：** <https://yiten885-ux.github.io/wechat-minigame-preflight-service/>
+
 本服务面向准备预览、上传或提审，但不确定工程还缺什么的微信小游戏开发者。原生 JavaScript / Canvas 项目优先；Cocos、Unity 或复杂服务端项目需要先确认范围。
 
 ## 检查范围
