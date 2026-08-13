@@ -1,6 +1,6 @@
 # 微信小游戏开发／审核／提审／报错快检
 
-Independent engineering review for one WeChat Mini Game project and one explicit version. Suitable for development/runtime errors, review or submission preparation, rejected submissions, and missing engineering evidence.
+Independent engineering review for one WeChat Mini Game project and one explicit version. Suitable for preview-build crashes, mismatched Source Map coordinates, development/runtime errors, review or submission preparation, rejected submissions, and missing engineering evidence.
 
 - Introductory price: CNY 99 for the first three projects.
 - Delivery: within 24 hours after complete sanitized materials are received.

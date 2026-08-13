@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="微信小游戏开发报错、审核、提审与驳回工程快检：首三单 99 元，收到完整脱敏材料后 24 小时内交付风险报告。" />
+    <meta name="description" content="微信小游戏开发报错、体验版崩溃、Source Map 行列号不匹配、审核提审与驳回工程快检：首三单 99 元，收到完整脱敏材料后 24 小时内交付风险报告。" />
     <link rel="canonical" href="https://yiten885-ux.github.io/wechat-minigame-preflight-service/" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="微信小游戏开发／审核／提审／报错快检｜首三单 99 元" />
-    <meta property="og:description" content="体验版报错、审核提审、驳回排查与工程证据快检；交付可执行问题清单，不承诺审核结果。" />
+    <meta property="og:description" content="体验版崩溃、Source Map 不匹配、审核提审、驳回排查与工程证据快检；交付可执行问题清单，不承诺审核结果。" />
     <meta property="og:url" content="https://yiten885-ux.github.io/wechat-minigame-preflight-service/" />
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231e3a5f'/%3E%3Cpath d='M17 20h30v7H17zm0 12h20v7H17zm0 12h30v7H17z' fill='white'/%3E%3C/svg%3E" />
     <script type="application/ld+json">
@@ -15,7 +15,7 @@
         "@context": "https://schema.org",
         "@type": "Service",
         "name": "微信小游戏开发／审核／提审／报错快检",
-        "description": "微信小游戏开发报错、审核提审、驳回排查及工程证据的固定范围独立快检，收到完整脱敏材料后 24 小时内交付风险报告。",
+        "description": "微信小游戏体验版崩溃、Source Map 行列号不匹配、开发报错、审核提审、驳回排查及工程证据的固定范围独立快检，收到完整脱敏材料后 24 小时内交付风险报告。",
         "url": "https://yiten885-ux.github.io/wechat-minigame-preflight-service/",
         "areaServed": "CN",
         "provider": {
@@ -174,7 +174,7 @@
       <div class="hero">
         <p class="eyebrow">首三单体验价 · 一个工程一次快检</p>
         <h1>微信小游戏开发／审核／提审／报错快检</h1>
-        <p class="lede">体验版或真机报错、准备审核/提审、已经驳回，先找出最可能阻断运行、审核和数据安全的工程风险。所有结论都指向代码或证据；缺少证据就明确写“未验证”。</p>
+        <p class="lede">体验版或真机崩溃、Source Map 行列号对不上、准备审核/提审或已经驳回，先找出最可能阻断运行、错误定位、审核和数据安全的工程风险。所有结论都指向代码或证据；缺少证据就明确写“未验证”。</p>
         <div class="price-row">
           <div class="price">¥99 <small>/ 工程</small></div>
           <div class="delivery">收到脱敏材料后 24 小时内交付</div>
@@ -190,6 +190,7 @@
         <h2 id="fit-title">适合这些情况</h2>
         <div class="grid">
           <article class="card"><h3>体验版或真机报错</h3><p>开发者工具能运行，但体验版、真机或恢复路径出现异常。</p></article>
+          <article class="card"><h3>崩溃无法映射源码</h3><p>体验版错误行列号与本地构建、Cocos Source Map 或微信线上 Source Map 不一致。</p></article>
           <article class="card"><h3>准备审核／提审</h3><p>不确定包体、隐私接口、存档、广告回调和工程证据是否有阻断。</p></article>
           <article class="card"><h3>审核已经驳回</h3><p>先区分工程问题、资质/类目问题和平台材料缺口，不把所有驳回都归因于代码。</p></article>
           <article class="card"><h3>本地测试很多</h3><p>核对哪些证据只证明本地构建，哪些才能证明预览、真机、上传或提审状态。</p></article>
@@ -200,6 +201,7 @@
         <h2 id="scope-title">检查什么</h2>
         <div class="grid">
           <article class="card"><h3>入口与包体</h3><p>工程入口、构建说明、资源路径、主包/分包和容器不兼容 API。</p></article>
+          <article class="card"><h3>崩溃与 Source Map</h3><p>核对错误捕获入口、release、最终 game.js、Cocos 本地 map 与微信线上 map 是否属于同一构建链。</p></article>
           <article class="card"><h3>隐私与存档</h3><p>隐私接口、用户数据、本地存档、迁移恢复与用户清除路径。</p></article>
           <article class="card"><h3>激励视频</h3><p>成功、失败、取消、重复回调和奖励幂等风险。</p></article>
           <article class="card"><h3>设备与证据</h3><p>安全区、窄屏、触控，以及预览、真机、上传和提审证据分层。</p></article>
