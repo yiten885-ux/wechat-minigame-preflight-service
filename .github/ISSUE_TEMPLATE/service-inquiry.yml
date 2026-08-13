@@ -1,5 +1,5 @@
 name: 服务咨询
-description: 咨询人民币 99 元微信小游戏上线前工程快检
+description: 咨询人民币 99 元微信小游戏开发／审核／提审／报错快检
 title: "[咨询] 项目代号 - 技术栈"
 labels:
   - inquiry
@@ -30,6 +30,7 @@ body:
         - 代码上传
         - 待提审
         - 已被驳回
+        - 体验版或真机报错
     validations:
       required: true
   - type: textarea

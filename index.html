@@ -3,19 +3,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="微信小游戏上线前工程快检：首三单 99 元，收到脱敏材料后 24 小时内交付风险报告。" />
+    <meta name="description" content="微信小游戏开发报错、审核、提审与驳回工程快检：首三单 99 元，收到完整脱敏材料后 24 小时内交付风险报告。" />
     <link rel="canonical" href="https://yiten885-ux.github.io/wechat-minigame-preflight-service/" />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="微信小游戏上线前工程快检｜首三单 99 元" />
-    <meta property="og:description" content="代码、配置与提审材料的固定范围快检；交付可执行问题清单，不承诺审核结果。" />
+    <meta property="og:title" content="微信小游戏开发／审核／提审／报错快检｜首三单 99 元" />
+    <meta property="og:description" content="体验版报错、审核提审、驳回排查与工程证据快检；交付可执行问题清单，不承诺审核结果。" />
     <meta property="og:url" content="https://yiten885-ux.github.io/wechat-minigame-preflight-service/" />
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231e3a5f'/%3E%3Cpath d='M17 20h30v7H17zm0 12h20v7H17zm0 12h30v7H17z' fill='white'/%3E%3C/svg%3E" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Service",
-        "name": "微信小游戏上线前工程快检",
-        "description": "代码、配置与提审材料的固定范围独立工程快检，收到完整脱敏材料后 24 小时内交付风险报告。",
+        "name": "微信小游戏开发／审核／提审／报错快检",
+        "description": "微信小游戏开发报错、审核提审、驳回排查及工程证据的固定范围独立快检，收到完整脱敏材料后 24 小时内交付风险报告。",
         "url": "https://yiten885-ux.github.io/wechat-minigame-preflight-service/",
         "areaServed": "CN",
         "provider": {
@@ -32,7 +32,7 @@
         }
       }
     </script>
-    <title>微信小游戏上线前工程快检｜首三单 99 元</title>
+    <title>微信小游戏开发／审核／提审／报错快检｜首三单 99 元</title>
     <style>
       :root {
         color-scheme: light dark;
@@ -173,18 +173,28 @@
     <main id="main" class="shell">
       <div class="hero">
         <p class="eyebrow">首三单体验价 · 一个工程一次快检</p>
-        <h1>微信小游戏上线前工程快检</h1>
-        <p class="lede">在预览、上传或提审前，找出最可能阻断运行、审核和数据安全的工程风险。所有结论都指向代码或证据；缺少证据就明确写“未验证”。</p>
+        <h1>微信小游戏开发／审核／提审／报错快检</h1>
+        <p class="lede">体验版或真机报错、准备审核/提审、已经驳回，先找出最可能阻断运行、审核和数据安全的工程风险。所有结论都指向代码或证据；缺少证据就明确写“未验证”。</p>
         <div class="price-row">
           <div class="price">¥99 <small>/ 工程</small></div>
           <div class="delivery">收到脱敏材料后 24 小时内交付</div>
         </div>
         <div class="cta-row">
           <a class="button primary" href="https://github.com/yiten885-ux/wechat-minigame-preflight-service/issues/new?template=service-inquiry.yml">提交服务咨询</a>
-          <a class="button secondary" href="https://github.com/yiten885-ux/wechat-minigame-preflight-service/blob/main/sample-report.md">查看虚构匿名示例</a>
+          <a class="button secondary" href="sample-report.html">查看虚构匿名示例</a>
         </div>
         <p class="note">咨询只做公开范围确认。不要在 Issue 中上传源码、日志、截图、密码、AppSecret、Cookie、验证码或商业机密。</p>
       </div>
+
+      <section aria-labelledby="fit-title">
+        <h2 id="fit-title">适合这些情况</h2>
+        <div class="grid">
+          <article class="card"><h3>体验版或真机报错</h3><p>开发者工具能运行，但体验版、真机或恢复路径出现异常。</p></article>
+          <article class="card"><h3>准备审核／提审</h3><p>不确定包体、隐私接口、存档、广告回调和工程证据是否有阻断。</p></article>
+          <article class="card"><h3>审核已经驳回</h3><p>先区分工程问题、资质/类目问题和平台材料缺口，不把所有驳回都归因于代码。</p></article>
+          <article class="card"><h3>本地测试很多</h3><p>核对哪些证据只证明本地构建，哪些才能证明预览、真机、上传或提审状态。</p></article>
+        </div>
+      </section>
 
       <section aria-labelledby="scope-title">
         <h2 id="scope-title">检查什么</h2>
@@ -202,6 +212,25 @@
           <li><strong>先确认范围</strong><span>说明技术栈、当前阶段和最担心的问题，不公开提交源码。</span></li>
           <li><strong>通过平台担保下单</strong><span>确认一个工程、一个版本和检查边界后再付款。</span></li>
           <li><strong>接收风险报告</strong><span>得到结论摘要、P0/P1/P2 风险、证据定位、建议和一次文字答疑。</span></li>
+        </ol>
+      </section>
+
+      <section aria-labelledby="deliverables-title">
+        <h2 id="deliverables-title">你会拿到什么</h2>
+        <div class="grid">
+          <article class="card"><h3>一页结论摘要</h3><p>红/黄/绿状态与最优先的三个 P0/P1 阻断项。</p></article>
+          <article class="card"><h3>逐项证据定位</h3><p>风险对应的代码或材料位置、优先级、影响和修复建议。</p></article>
+          <article class="card"><h3>证据缺口清单</h3><p>预览、真机、上传和提审还缺什么，不把缺失证据写成已通过。</p></article>
+          <article class="card"><h3>一次文字答疑</h3><p>对报告内问题做一次文字澄清；代码修复另行确认范围。</p></article>
+        </div>
+      </section>
+
+      <section aria-labelledby="materials-title">
+        <h2 id="materials-title">开始前需要什么</h2>
+        <ol class="steps">
+          <li><strong>技术栈与版本</strong><span>原生 JavaScript / Canvas、Cocos、Unity 或其他技术栈。</span></li>
+          <li><strong>问题文字摘要</strong><span>描述报错、驳回或最担心的环节；公开咨询中不粘贴日志和截图。</span></li>
+          <li><strong>脱敏工程材料</strong><span>确认范围后提供脱敏工程副本、只读仓库或必要的脱敏截图；无法安全脱敏时不接收。</span></li>
         </ol>
       </section>
 

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="微信小游戏开发、审核、提审与报错工程快检的虚构匿名示例报告。" />
+    <link rel="canonical" href="https://yiten885-ux.github.io/wechat-minigame-preflight-service/sample-report.html" />
+    <title>虚构匿名示例报告｜微信小游戏工程快检</title>
+    <style>
+      :root { color-scheme: light dark; --bg:#f8fafc; --surface:#fff; --text:#0f172a; --muted:#475569; --primary:#1e3a5f; --line:#cbd5e1; --red:#991b1b; --yellow:#854d0e; --green:#166534; }
+      * { box-sizing: border-box; }
+      body { margin:0; background:var(--bg); color:var(--text); font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Noto Sans Mono CJK SC",monospace; line-height:1.65; }
+      main { width:min(100% - 32px, 960px); margin:0 auto; padding:40px 0 72px; }
+      a { color:var(--primary); }
+      h1 { max-width:20ch; margin:20px 0 12px; font-size:clamp(30px,6vw,54px); line-height:1.15; }
+      h2 { margin-top:48px; font-size:clamp(24px,4vw,34px); }
+      .back { display:inline-flex; min-height:48px; align-items:center; font-weight:700; }
+      .warning, .summary { margin:24px 0; padding:20px; border:1px solid var(--line); border-radius:12px; background:var(--surface); }
+      .warning { border-left:6px solid var(--yellow); }
+      .summary { border-left:6px solid var(--red); }
+      .meta { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; margin:24px 0; padding:0; list-style:none; }
+      .meta li { padding:14px 16px; border:1px solid var(--line); border-radius:10px; background:var(--surface); }
+      .muted { color:var(--muted); }
+      .table-wrap { overflow-x:auto; border:1px solid var(--line); border-radius:12px; background:var(--surface); }
+      table { width:100%; min-width:760px; border-collapse:collapse; }
+      th, td { padding:14px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+      th { background:color-mix(in srgb,var(--primary) 10%,var(--surface)); }
+      tr:last-child td { border-bottom:0; }
+      .red { color:var(--red); font-weight:700; } .yellow { color:var(--yellow); font-weight:700; } .green { color:var(--green); font-weight:700; }
+      .cta { display:inline-flex; min-height:48px; align-items:center; justify-content:center; margin-top:20px; padding:10px 18px; border:2px solid var(--primary); border-radius:10px; background:var(--primary); color:#fff; text-decoration:none; font-weight:700; }
+      @media (max-width:620px) { .meta { grid-template-columns:1fr; } .cta { width:100%; } }
+      @media (prefers-color-scheme:dark) { :root { --bg:#0b1220; --surface:#111c2e; --text:#f1f5f9; --muted:#cbd5e1; --primary:#93c5fd; --line:#334155; --red:#fca5a5; --yellow:#fde68a; --green:#86efac; } .cta { color:#0b1220; } }
+    </style>
+  </head>
+  <body>
+    <main>
+      <a class="back" href="./">← 返回服务说明</a>
+      <h1>微信小游戏工程快检报告</h1>
+      <p class="muted">虚构匿名示例 · DEMO-001</p>
+      <div class="warning"><strong>证据边界：</strong>本页只展示报告结构，不来自真实客户，也不证明任何项目已通过真机、上传、提审或上线。</div>
+
+      <ul class="meta">
+        <li><strong>技术栈</strong><br />原生 JavaScript / Canvas</li>
+        <li><strong>检查版本</strong><br /><code>demo000</code></li>
+        <li><strong>当前证据层级</strong><br />本地静态检查</li>
+        <li><strong>交付形式</strong><br />风险摘要 + 证据定位 + 建议</li>
+      </ul>
+
+      <section>
+        <h2>结论摘要</h2>
+        <div class="summary">
+          <p><strong>总体结论：</strong><span class="red">红</span></p>
+          <p>P0 阻断 1 项 · P1 高风险 2 项 · P2 建议 1 项</p>
+          <p><strong>最先处理：</strong>补齐奖励幂等、区分预览与真机证据、验证安全区布局。</p>
+        </div>
+      </section>
+
+      <section>
+        <h2>逐项风险</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>检查项</th><th>状态</th><th>示例证据</th><th>风险</th><th>建议</th></tr></thead>
+            <tbody>
+              <tr><td>激励视频奖励幂等</td><td class="red">红</td><td>示例回调可能重复发奖</td><td>重复奖励破坏经济系统</td><td>用一次性事务 ID 和持久化状态门禁</td></tr>
+              <tr><td>真机证据</td><td class="yellow">黄</td><td>只有开发者工具截图</td><td>不能证明真实设备行为</td><td>在受支持设备完成一轮录屏验收</td></tr>
+              <tr><td>安全区与窄屏</td><td class="yellow">黄</td><td>未提供窄屏截图</td><td>关键按钮可能被遮挡</td><td>覆盖窄屏与刘海屏布局测试</td></tr>
+              <tr><td>本地存档清除</td><td class="green">绿</td><td>示例代码存在显式清除入口</td><td>当前只覆盖静态路径</td><td>真机复验清除与重启流程</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h2>如何理解证据</h2>
+        <p>本地测试、开发者工具模拟器、官方预览、真实设备、代码上传、平台提交、审核通过和线上收入是不同证据层级，不能互相替代。</p>
+        <a class="cta" href="https://github.com/yiten885-ux/wechat-minigame-preflight-service/issues/new?template=service-inquiry.yml">提交 ¥99 服务咨询</a>
+      </section>
+    </main>
+  </body>
+</html>
