@@ -1,0 +1,51 @@
+name: 服务咨询
+description: 咨询人民币 99 元微信小游戏上线前工程快检
+title: "[咨询] 项目代号 - 技术栈"
+labels:
+  - inquiry
+body:
+  - type: markdown
+    attributes:
+      value: |
+        这里只做公开范围确认。不要上传源码、日志、截图、密码、AppSecret、API Key、Cookie、验证码、身份证明、真实用户数据或商业机密。
+  - type: dropdown
+    id: stack
+    attributes:
+      label: 技术栈
+      options:
+        - 原生 JavaScript / Canvas
+        - Cocos
+        - Unity
+        - 其他
+    validations:
+      required: true
+  - type: dropdown
+    id: stage
+    attributes:
+      label: 当前阶段
+      options:
+        - 本地开发
+        - 开发者工具预览
+        - 体验版
+        - 代码上传
+        - 待提审
+        - 已被驳回
+    validations:
+      required: true
+  - type: textarea
+    id: concern
+    attributes:
+      label: 最担心的问题
+      description: 只描述问题，不粘贴源码或敏感内容。
+      placeholder: 例如：激励视频回调、包体、隐私接口、真机兼容性。
+    validations:
+      required: true
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: 范围确认
+      options:
+        - label: 我理解本服务不包含代码修复、真机代测、备案、资质申请、正式提审，也不承诺审核通过。
+          required: true
+        - label: 我不会在公开 Issue 中提交任何凭据、身份材料、真实用户数据或商业机密。
+          required: true
